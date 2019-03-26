@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Temperaturas</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Temperaturas</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Dia da Semana</th>
+						<th>Data e Hora</th>
+						<th>Latitude</th>
+						<th>Longitude</th>
+						<th>Temperatura Mínima</th>
+						<th>Temperatura Máxima</th>
+						<th>Humidade Relativa</th>
+						<th>Descrição</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="temperatura : temperaturas">
+						<td th:text="${temperatura.diaDaSemana}"></td>
+						<td th:text="${temperatura.dataHora}"></td>
+						<td th:text="${temperatura.latitude}"></td>
+						<td th:text="${temperatura.longitude}"></td>
+						<td th:text="${temperatura.temperaturaMin}"></td>
+						<td th:text="${temperatura.temperaturaMax}"></td>
+						<td th:text="${temperatura.humidadeDoAr}"></td>
+						<td th:text="${temperatura.descricao}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<form class="form-inline" method="post" th:object="@{/temperaturas}" style="margin: 20px 0">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Dia da Semana" th:field="*{diaDaSemana}"/> 
+			<input type="text" class="form-control" placeholder="Data e Hora" th:field="*{dataHora}"/>
+			<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}"/>
+			<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}"/>
+			<input type="text" class="form-control" placeholder="Temperatura Mínima" th:field="*{temperaturaMax}"/>
+			<input type="text" class="form-control" placeholder="Temperatura Máxima" th:field="*{temperaturaMin}"/>
+			<input type="text" class="form-control" placeholder="Humidade Relativa do Ar" th:field="*{humidadeDoAr}"/>
+			<input type="text" class="form-control" placeholder="Descriccao" th:field="*{descricao}"/>
+			<button type="submit" class="btn btn-primary">Adicionar</button>
+		</div>
+	</form>
+	
+</body>
+</html>
