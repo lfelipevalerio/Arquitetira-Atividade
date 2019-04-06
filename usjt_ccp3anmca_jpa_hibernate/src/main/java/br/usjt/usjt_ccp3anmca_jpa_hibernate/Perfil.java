@@ -9,6 +9,8 @@ public class Perfil {
 	@GeneratedValue
 	private Long id;
 	private String descricao;
+	@OneToOne (mappedBy = "perfil")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -49,5 +51,13 @@ public class Perfil {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

@@ -1,5 +1,7 @@
 package br.usjt.usjt_ccp3anmca_jpa_hibernate;
 
+import java.util.*;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,9 +16,23 @@ public class Usuario {
 	private String fone;
 	@Column(nullable = true, length = 100)
 	private String email;
-	@OneToOne (optional = false)
-	@JoinColumn (name = "id_do_meu_perfil")
+	@OneToOne(optional = false)
+	@JoinColumn(name = "id_do_meu_perfil")
 	private Perfil perfil;
+	@ManyToMany
+	@JoinTable(name = "tb_usuario_conteudo", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_consumo"))
+	private List<Conteudo> conteudos;
+	@OneToMany (mappedBy = "usuario")
+	private List <Consumo> consumos;
+
+
+	public List<Conteudo> getConteudos() {
+		return conteudos;
+	}
+
+	public void setConteudos(List<Conteudo> conteudos) {
+		this.conteudos = conteudos;
+	}
 
 	public Long getId() {
 		return id;

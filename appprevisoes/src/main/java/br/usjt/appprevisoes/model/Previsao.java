@@ -1,12 +1,9 @@
 package br.usjt.appprevisoes.model;
 
 import java.io.Serializable;
+import java.util.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Previsao implements Serializable {
@@ -25,7 +22,16 @@ public class Previsao implements Serializable {
 	private Double temperaturaMax;
 	private Double umidadeDoAr;
 	private String descricao;
+	@ManyToOne
+	private List <Cidade> cidades;
+
 	
+	public List<Cidade> getCidades() {
+		return cidades;
+	}
+	public void setCidades(List<Cidade> cidades) {
+		this.cidades = cidades;
+	}
 	//get and set
 	public Long getId() {
 		return id;
