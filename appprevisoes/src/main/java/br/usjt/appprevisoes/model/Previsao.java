@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Previsao implements Serializable {
@@ -14,7 +16,8 @@ public class Previsao implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String diaDaSemana;
+	@OneToOne (optional = false)
+	private DiaDaSemana diaDaSemana;
 	private String dataHora;
 	private String latitude;
 	private String longitude;
@@ -30,10 +33,10 @@ public class Previsao implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDiaDaSemana() {
+	public DiaDaSemana getDiaDaSemana() {
 		return diaDaSemana;
 	}
-	public void setDiaDaSemana(String diaDaSemana) {
+	public void setDiaDaSemana(DiaDaSemana diaDaSemana) {
 		this.diaDaSemana = diaDaSemana;
 	}
 	public String getDataHora() {

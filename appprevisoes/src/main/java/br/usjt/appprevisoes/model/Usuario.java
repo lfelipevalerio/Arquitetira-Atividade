@@ -1,5 +1,7 @@
 package br.usjt.appprevisoes.model;
 
+import javax.persistence.*;
+
 @Entity
 public class Usuario {
 	@Id
