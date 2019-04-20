@@ -18,9 +18,15 @@ public class Previsao implements Serializable{
 	
 	private Double maxima;
 	
-	private Double humidade;
+	private Double umidade;
 	
 	private String descricao;
+	
+	private String dataHora;
+	
+	private String latitude;
+	
+	private String longitude;
 
 	public Long getId() {
 		return id;
@@ -54,12 +60,12 @@ public class Previsao implements Serializable{
 		this.maxima = maxima;
 	}
 
-	public Double getHumidade() {
-		return humidade;
+	public Double getUmidade() {
+		return umidade;
 	}
 
-	public void setHumidade(Double humidade) {
-		this.humidade = humidade;
+	public void setUmidade(Double umidade) {
+		this.umidade = umidade;
 	}
 
 	public String getDescricao() {
@@ -68,6 +74,30 @@ public class Previsao implements Serializable{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public String getDataHora() {
+		return dataHora;
+	}
+
+	public void setDataHora(String dataHora) {
+		this.dataHora = dataHora;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	
 	
