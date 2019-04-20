@@ -14,6 +14,10 @@ public class Cidade implements Serializable{
 	public Long idCidade;
 	
 	public String nomeCidade;
+	
+	public String latitude;
+	
+	public String longitude;
 
 	public Long getIdCidade() {
 		return idCidade;
@@ -29,6 +33,22 @@ public class Cidade implements Serializable{
 
 	public void setNomeCidade(String nomeCidade) {
 		this.nomeCidade = nomeCidade;
+	}
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	
 	
