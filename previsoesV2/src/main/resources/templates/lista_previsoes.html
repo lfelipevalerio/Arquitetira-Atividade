@@ -17,6 +17,7 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th>Cidade</th>
 						<th>Dia da Semana</th>
 						<th>Data e Hora</th>
 						<th>Longitude</th>
@@ -45,6 +46,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="previsao: ${previsoes}">
+						<td th:text="${previsao.cidade.getNomeCidade()}"></td>
 						<td th:text="${previsao.diaSemana.getDiaSemana()}"></td>
 						<td th:text="${previsao.dataHora}"></td>
 						<td th:text="${previsao.latitude}"></td>

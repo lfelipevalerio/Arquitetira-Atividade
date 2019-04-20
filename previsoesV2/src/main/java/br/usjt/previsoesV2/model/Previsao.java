@@ -12,6 +12,10 @@ public class Previsao implements Serializable{
 	@GeneratedValue
 	private Long id;
 	
+	@ManyToOne
+	@JoinColumn (name = "id_cidade")
+	private Cidade cidade;
+	
 	@OneToOne (optional = true)
 	@JoinColumn (name = "id_dia_semana")
 	private DiaSemana diaSemana;
@@ -101,6 +105,15 @@ public class Previsao implements Serializable{
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+	
 	
 	
 }
