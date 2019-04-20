@@ -2,13 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<title>Previsões do Tempo</title>
-<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-	rel="stylesheet" />
-<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-	rel="stylesheet" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Previsões do Tempo</title>
+	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
 </head>
 <body>
 	<div class="panel panel-default" style="margin: 10px">
@@ -28,25 +26,26 @@
 						<th>Umidade do Ar</th>
 						<th>Descrição</th>
 					</tr>
-
-					<form class="form-inline" method="post" style=" margin: 20px 0" th:object="${previsao}" th:action="@{/previsoes}">
+					<!--
+					<form class="form-inline" method="post" style="margin: 20px 0" th:object="${previsao}" th:action="@{/previsoes}">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Id" th:field="*{id}"/>
-							<input type="text" class="form-control" placeholder="Dia da semana" th:field="*{diaSemana}"/>
-							<input type="text" class="form-control" placeholder="Data e hora" th:field="*{dataHora}"/>
-							<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}"/>
-							<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}"/> 
-							<input type="text" class="form-control" placeholder="Temperatura minima" th:field="*{minima}"/>
-							<input type="text" class="form-control" placeholder="Temperatura máxima" th:field="*{maxima}"/>
-							<input type="text" class="form-control" placeholder="Umidade do Ar" th:field="*{umidade}"/>
-							<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}"/>
+							<input type="text" class="form-control" placeholder="Id" th:field="*{id}" /> 
+							<input type="text" class="form-control" placeholder="Dia da Semana" th:field="*{diaSemana}" />
+							<input type="text" class="form-control" placeholder="Data e hora" th:field="*{dataHora}" /> 
+							<input type="text" class="form-control" placeholder="Latitude" th:field="*{latitude}" /> 
+							<input type="text" class="form-control" placeholder="Longitude" th:field="*{longitude}" /> 
+							<input type="text" class="form-control" placeholder="Temperatura minima" th:field="*{minima}" /> 
+							<input type="text" class="form-control" placeholder="Temperatura máxima" th:field="*{maxima}" /> 
+							<input type="text" class="form-control" placeholder="Umidade do Ar" th:field="*{umidade}" /> 
+							<input type="text" class="form-control" placeholder="Descrição" th:field="*{descricao}" />
 							<button type="submit" class="btn btn-primary">Adicionar</button>
 						</div>
 					</form>
+					-->
 				</thead>
 				<tbody>
 					<tr th:each="previsao: ${previsoes}">
-						<td th:text="${previsao.diaSemana}"></td>
+						<td th:text="${previsao.diaSemana.getDiaSemana()}"></td>
 						<td th:text="${previsao.dataHora}"></td>
 						<td th:text="${previsao.latitude}"></td>
 						<td th:text="${previsao.longitude}"></td>

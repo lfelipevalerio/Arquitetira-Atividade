@@ -12,7 +12,9 @@ public class Previsao implements Serializable{
 	@GeneratedValue
 	private Long id;
 	
-	private String diaSemana;
+	@OneToOne (optional = true)
+	@JoinColumn (name = "id_dia_semana")
+	private DiaSemana diaSemana;
 	
 	private Double minima;
 	
@@ -36,11 +38,11 @@ public class Previsao implements Serializable{
 		this.id = id;
 	}
 
-	public String getDiaSemana() {
+	public DiaSemana getDiaSemana() {
 		return diaSemana;
 	}
 
-	public void setDiaSemana(String diaSemana) {
+	public void setDiaSemana(DiaSemana diaSemana) {
 		this.diaSemana = diaSemana;
 	}
 
