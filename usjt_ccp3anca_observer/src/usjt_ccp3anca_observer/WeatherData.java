@@ -53,4 +53,18 @@ public class WeatherData implements Subject{
 		
 	}
 	
+	public void Iniciar() {
+		Random gerador = new Random();
+		while (true) {
+			temperature = 38 + gerador.nextDouble() *5;
+			humidity = 20 + gerador.nextDouble() * 55;
+			pressure = 800 + gerador.nextDouble() * 400;
+			try {
+				Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		}
+	}
+	
 }
